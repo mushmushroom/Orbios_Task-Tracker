@@ -6,3 +6,9 @@ export interface Task {
   description: string;
   status: Status;
 }
+
+export interface Column {
+  id: Status;
+  title: string;
+  color: string;
+}
