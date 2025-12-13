@@ -1,13 +1,13 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { getTasks, saveTasks } from '@/app/lib/tasks';
 import { VALID_STATUSES } from '@/app/lib/constants';
 
-export async function PUT(request: Request, { params }: { params: { id: string } }) {
-  const paramsData = await params;
+export async function PUT(request: NextRequest, context: { params: Promise<{ id: string }> }) {
+  const { id } = await context.params;
   try {
     // verify task exists
     const tasks = await getTasks();
-    const idx = tasks.findIndex((t) => t.id === paramsData.id);
+    const idx = tasks.findIndex((t) => t.id === id);
     if (idx === -1) {
       return NextResponse.json({ error: 'Task not found' }, { status: 404 });
     }
@@ -46,13 +46,11 @@ export async function PUT(request: Request, { params }: { params: { id: string }
     return NextResponse.json({ error: `Failed to update task: ${error}` }, { status: 500 });
   }
 }
-
-
-export async function DELETE(request: Request, { params }: { params: { id: string } }) {
-  const paramsData = await params;
+export async function DELETE(request: NextRequest, context: { params: Promise<{ id: string }> }) {
+  const { id } = await context.params;
   try {
     const tasks = await getTasks();
-    const filteredTasks = tasks.filter((t) => t.id !== paramsData.id);
+    const filteredTasks = tasks.filter((t) => t.id !== id);
 
     if (tasks.length === filteredTasks.length) {
       return NextResponse.json({ error: 'Task not found' }, { status: 404 });
