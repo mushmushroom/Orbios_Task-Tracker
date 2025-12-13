@@ -1,8 +1,13 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 button {
   cursor: pointer;
 }
+
+body {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+}
+
 /* :root {
   --background: #ffffff;
   --foreground: #171717;
