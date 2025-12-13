@@ -46,3 +46,21 @@ export async function PUT(request: Request, { params }: { params: { id: string }
     return NextResponse.json({ error: `Failed to update task: ${error}` }, { status: 500 });
   }
 }
+
+
+export async function DELETE(request: Request, { params }: { params: { id: string } }) {
+  const paramsData = await params;
+  try {
+    const tasks = await getTasks();
+    const filteredTasks = tasks.filter((t) => t.id !== paramsData.id);
+
+    if (tasks.length === filteredTasks.length) {
+      return NextResponse.json({ error: 'Task not found' }, { status: 404 });
+    }
+
+    await saveTasks(filteredTasks);
+    return NextResponse.json({ success: true });
+  } catch (error) {
+    return NextResponse.json({ error: `Failed to delete task: ${error}` }, { status: 500 });
+  }
+}
