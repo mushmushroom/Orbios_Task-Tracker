@@ -1,8 +1,9 @@
 import { Edit2, GripVertical, Trash2, Eye } from 'lucide-react';
-import { Status, Task } from '../types';
+import { Status, Task } from '@/types';
 import { useState } from 'react';
 import TaskViewModal from './TaskViewModal';
 import DeleteConfirmModal from './DeleteConfirmModal';
+import { MAX_CHARS } from '@/lib/constants';
 
 interface Column {
   id: Status;
@@ -36,8 +37,7 @@ const TaskCard: React.FC<TaskCardProps> = ({
     return statuses[(idx + 1) % statuses.length];
   };
 
-  // Check if description needs truncation 
-  const MAX_CHARS = 100;
+  // Check if description needs truncation
   const needsTruncation = task.description && task.description.length > MAX_CHARS;
   const truncatedDescription = needsTruncation
     ? task.description.substring(0, MAX_CHARS) + '...'
