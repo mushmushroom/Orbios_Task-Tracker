@@ -1,0 +1,25 @@
+{
+  "name": "mcp-server",
+  "version": "1.0.0",
+  "description": "MCP server to automate managing task tracker ",
+  "main": "src/server.ts",
+  "scripts": {
+    "server:build": "tsc",
+    "server:build:watch": "tsc --watch",
+    "server:dev": "tsx src/server.ts",
+    "server:inspect": "set DANGEROUSLY_OMIT_AUTH=true && npx @modelcontextprotocol/inspector npm run server:dev"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.24.3",
+    "zod": "^4.1.13"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/inspector": "^0.15.0",
+    "@types/node": "^25.0.2",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}
