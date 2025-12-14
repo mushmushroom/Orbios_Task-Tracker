@@ -1,5 +1,5 @@
 import fs from 'fs/promises';
-import { Status, Task } from '@/app/types';
+import { Status, Task } from '@/types';
 import { DATAFILE, VALID_STATUSES } from './constants';
 
 export async function getTasks(): Promise<Task[]> {

@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getTasks, saveTasks } from '@/app/lib/tasks';
-import { VALID_STATUSES } from '@/app/lib/constants';
+import { getTasks, saveTasks } from '@/lib/tasks';
+import { VALID_STATUSES } from '@/lib/constants';
 
 export async function PUT(request: NextRequest, context: { params: Promise<{ id: string }> }) {
   const { id } = await context.params;

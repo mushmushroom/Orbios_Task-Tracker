@@ -1,10 +1,8 @@
 import { NextResponse } from 'next/server';
-import fs from 'fs';
 import { v4 as uuid } from 'uuid';
 
-import { getTasks, isStatus, isValidTaskPayload, saveTasks } from '@/app/lib/tasks';
-import { DATAFILE, VALID_STATUSES } from '@/app/lib/constants';
-import { Status } from '@/app/types';
+import { getTasks, isStatus, isValidTaskPayload, saveTasks } from '@/lib/tasks';
+import { Status } from '@/types';
 
 export async function GET() {
   try {

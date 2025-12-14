@@ -2,10 +2,9 @@
 
 import React, { useState, useEffect } from 'react';
 import { Plus } from 'lucide-react';
-import { Column, Status, Task } from './types';
-import TaskBoard from './components/TaskBoard';
-import TaskModal from './components/TaskModal';
-
+import { Column, Status, Task } from '../types';
+import TaskBoard from '@/components/TaskBoard';
+import TaskModal from '@/components/TaskModal';
 
 export default function Home() {
   const [tasks, setTasks] = useState<Task[]>([]);
