@@ -1,0 +1,13 @@
+{
+	"servers": {
+		"mcp-task-tracker": {
+			"type": "stdio",
+			"command": "npm",
+			"args": [
+				"run",
+				"server:dev"
+			]
+		}
+	},
+	"inputs": []
+}

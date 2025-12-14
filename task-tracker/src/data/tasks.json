@@ -1,0 +1,32 @@
+[
+  {
+    "id": "2be19ded-2a07-4e8b-a8b1-fed9c900c552",
+    "title": "Setup project",
+    "description": "Initialize Next.js app and install dependencies",
+    "status": "done"
+  },
+  {
+    "id": "260030dd-f7e8-4451-bc0d-cf82ebc56c01",
+    "title": "Implement API routes",
+    "description": "Add GET, POST, PUT, DELETE handlers for tasks",
+    "status": "in-progress"
+  },
+  {
+    "id": "1197a563-b11d-4ad9-9d2f-096e9b590162",
+    "title": "Implement task creation modal",
+    "description": "Build a reusable modal component. Ensure the modal adapts correctly to small screens, supports dark mode, and works consistently across browsers.",
+    "status": "todo"
+  },
+  {
+    "id": "850a57b8-a7e0-49b5-a62b-5549853aa3ea",
+    "title": "Finalize JSON persistence",
+    "description": "Verify that tasks are reliably saved and loaded from the JSON file across server restarts. Handle edge cases such as an empty or corrupted file, concurrent writes, and ensure the application fails gracefully with clear error messages.",
+    "status": "todo"
+  },
+  {
+    "id": "7750efcf-13f9-4bad-8f03-8e7d165fa171",
+    "title": "Design task board UI",
+    "description": "Create 3-column layout using Tailwind",
+    "status": "in-progress"
+  }
+]
